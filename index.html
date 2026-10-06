@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A2 Grammar Lab: Future + Time or If Clause (Unit 2.9)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Fredoka', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                        },
+                        skybrand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: rgba(0,0,0,0.05); }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 999px; }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+    <!-- -->
+    <header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+            <div class="flex items-center space-x-3">
+                <div class="bg-gradient-to-tr from-emerald-500 to-teal-500 text-white p-2.5 rounded-2xl shadow-md shadow-emerald-500/20">
+                    <i class="fa-solid fa-compass text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-display font-bold text-slate-900 dark:text-white leading-tight">Grammar Lab 2.9</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 font-medium hidden sm:block">Future + Time or If Clauses (A2 Level)</p>
+                </div>
+            </div>
+
+            <!-- Score, Badges & Theme Toggle -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <!-- Progress Indicator -->
+                <div class="hidden md:flex items-center gap-2.5 bg-slate-100 dark:bg-slate-800 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <span class="text-xs font-semibold text-slate-600 dark:text-slate-300">
+                        Completed: <span id="header-progress-text" class="text-emerald-600 dark:text-emerald-400 font-bold">0/32</span>
+                    </span>
+                    <div class="w-16 bg-slate-200 dark:bg-slate-700 h-2 rounded-full overflow-hidden">
+                        <div id="header-progress-bar" class="bg-emerald-500 h-full w-0 transition-all duration-300"></div>
+                    </div>
+                </div>
+
+                <!-- Stars Badge -->
+                <div class="flex items-center gap-1.5 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-300 border border-amber-200 dark:border-amber-800/60 px-3 py-1.5 rounded-xl font-bold text-xs sm:text-sm">
+                    <i class="fa-solid fa-star text-amber-500"></i>
+                    <span>Score: <span id="header-score">0</span></span>
+                </div>
+
+                <!-- Dark Mode -->
+                <button id="theme-toggle" onclick="toggleDarkMode()" class="p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Toggle dark mode">
+                    <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden"></i>
+                    <i id="theme-toggle-light-icon" class="fa-solid fa-sun"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full flex-grow space-y-6">
+
+        <!-- A2 Interactive Cheat Sheet / Grammar Reference -->
+        <section class="bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700/80 shadow-sm overflow-hidden">
+            <div class="p-5 sm:p-6 bg-gradient-to-r from-emerald-500/10 via-teal-500/5 to-transparent border-b border-slate-100 dark:border-slate-700/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                    <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-1 rounded-md mb-1">
+                        <i class="fa-solid fa-book-open"></i> Grammar Rule 2.9
+                    </span>
+                    <h2 class="text-xl sm:text-2xl font-display font-bold text-slate-900 dark:text-white">Future + Time or If Clause</h2>
+                </div>
+                <button onclick="toggleCheatSheet()" id="cheat-toggle-btn" class="self-start sm:self-auto text-xs font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-100/70 dark:bg-emerald-900/40 hover:bg-emerald-200/70 px-3.5 py-2 rounded-xl transition flex items-center gap-2">
+                    <i class="fa-solid fa-eye"></i> <span>Hide Reference</span>
+                </button>
+            </div>
+
+            <div id="cheat-sheet-body" class="p-5 sm:p-6 space-y-6 transition-all">
+                <!-- Table Rules -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700">
+                        <div class="text-xs font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-wider mb-2">
+                            Rule 1: Time / If Clause First (Needs Comma)
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium space-y-1">
+                            <p><span class="bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Time / If Clause (Simple Present)</span> <span class="text-red-500 font-bold text-base">,</span> <span class="bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 px-2 py-0.5 rounded font-semibold">Main Clause (Future)</span></p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 pt-1">Example: <em>When I <strong>retire</strong>, I <strong>am going to start</strong> a new hobby.</em></p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-700">
+                        <div class="text-xs font-bold text-skybrand-600 dark:text-skybrand-500 uppercase tracking-wider mb-2">
+                            Rule 2: Main Clause First (NO Comma)
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 p-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium space-y-1">
+                            <p><span class="bg-blue-100 dark:bg-blue-950/60 text-blue-800 dark:text-blue-300 px-2 py-0.5 rounded font-semibold">Main Clause (Future)</span> <span class="bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 px-2 py-0.5 rounded font-semibold">Time / If Clause (Simple Present)</span></p>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 pt-1">Example: <em>I <strong>will continue</strong> to work if I <strong>am</strong> healthy.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Future Tenses Distinction Quick Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                    <div class="p-3.5 rounded-xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200 dark:border-blue-800">
+                        <div class="font-bold text-xs text-blue-700 dark:text-blue-300 uppercase">be going to</div>
+                        <div class="text-xs text-slate-600 dark:text-slate-300 mt-1">Plans & intentions decided earlier.</div>
+                        <div class="text-xs text-blue-800 dark:text-blue-200 italic mt-1 font-medium">"He is going to drive to the airport."</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-purple-50 dark:bg-purple-950/30 border border-purple-200 dark:border-purple-800">
+                        <div class="font-bold text-xs text-purple-700 dark:text-purple-300 uppercase">will / 'll</div>
+                        <div class="text-xs text-slate-600 dark:text-slate-300 mt-1">Instant decisions, promises & predictions.</div>
+                        <div class="text-xs text-purple-800 dark:text-purple-200 italic mt-1 font-medium">"I'll let you know later today."</div>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800">
+                        <div class="font-bold text-xs text-emerald-700 dark:text-emerald-300 uppercase">Present Continuous</div>
+                        <div class="text-xs text-slate-600 dark:text-slate-300 mt-1">Fixed arrangements with dates/times.</div>
+                        <div class="text-xs text-emerald-800 dark:text-emerald-200 italic mt-1 font-medium">"They're coming on Sunday."</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1" id="section-nav">
+            <button onclick="switchSection('sec1')" id="nav-sec1" class="section-tab active px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-emerald-600 text-white shadow-md shadow-emerald-600/20 flex items-center gap-2">
+                <i class="fa-solid fa-list-check"></i> 1. Dialogue Cloze
+            </button>
+            <button onclick="switchSection('sec2')" id="nav-sec2" class="section-tab px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 flex items-center gap-2">
+                <i class="fa-solid fa-sliders"></i> 2. Comma & Sentence Lab
+            </button>
+            <button onclick="switchSection('sec3')" id="nav-sec3" class="section-tab px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 flex items-center gap-2">
+                <i class="fa-solid fa-pen-field"></i> 3. Double-Verb Fill-In
+            </button>
+            <button onclick="switchSection('sec4')" id="nav-sec4" class="section-tab px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 flex items-center gap-2">
+                <i class="fa-solid fa-feather"></i> 4. "About You" Journal
+            </button>
+            <button onclick="switchSection('sec5')" id="nav-sec5" class="section-tab px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 flex items-center gap-2">
+                <i class="fa-solid fa-comments"></i> 5. Partner Role-Play
+            </button>
+        </div>
+
+        <section id="sec1" class="app-section space-y-4">
+            <div class="bg-emerald-50 dark:bg-emerald-950/40 border-l-4 border-emerald-500 p-4 rounded-r-2xl text-emerald-900 dark:text-emerald-200 text-xs sm:text-sm">
+                <strong class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-circle-question"></i> Dialogue Exercises (Textbook Style)</strong>
+                Choose the correct verb form for each situation in these conversations. Look for time/if words!
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="sec1-cards-container">
+                <!-- Rendered dynamically via JavaScript -->
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <button onclick="resetSection1()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 bg-slate-200/60 dark:bg-slate-800 rounded-xl transition">
+                    <i class="fa-solid fa-rotate-right mr-1"></i> Reset Section
+                </button>
+                <button onclick="checkSection1()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i> Check Section 1 Answers
+                </button>
+            </div>
+        </section>
+
+        <section id="sec2" class="app-section space-y-4 hidden">
+            <div class="bg-skybrand-50 dark:bg-skybrand-950/40 border-l-4 border-skybrand-500 p-4 rounded-r-2xl text-skybrand-900 dark:text-skybrand-200 text-xs sm:text-sm">
+                <strong class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-sliders"></i> Comma & Sentence Construction Lab</strong>
+                Combine clauses in correct order. Turn the comma toggle ON if the Time or If clause comes FIRST!
+            </div>
+
+            <div class="space-y-4" id="sec2-container">
+                <!-- Rendered dynamically -->
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <button onclick="resetSection2()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 bg-slate-200/60 dark:bg-slate-800 rounded-xl transition">
+                    <i class="fa-solid fa-rotate-right mr-1"></i> Reset Section
+                </button>
+                <button onclick="checkSection2()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i> Check Section 2 Answers
+                </button>
+            </div>
+        </section>
+
+        <section id="sec3" class="app-section space-y-4 hidden">
+            <div class="bg-purple-50 dark:bg-purple-950/40 border-l-4 border-purple-500 p-4 rounded-r-2xl text-purple-900 dark:text-purple-200 text-xs sm:text-sm">
+                <strong class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-pen-field"></i> Verbs in Brackets Practice</strong>
+                Conjugate both verbs! Remember: Simple Present for the time/if clause, Future form (will / be going to) for the main clause.
+            </div>
+
+            <div class="space-y-4" id="sec3-container">
+                <!-- Rendered dynamically -->
+            </div>
+
+            <div class="flex justify-between items-center pt-2">
+                <button onclick="resetSection3()" class="px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 bg-slate-200/60 dark:bg-slate-800 rounded-xl transition">
+                    <i class="fa-solid fa-rotate-right mr-1"></i> Reset Section
+                </button>
+                <button onclick="checkSection3()" class="px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm rounded-xl shadow-md shadow-emerald-600/20 transition flex items-center gap-2">
+                    <i class="fa-solid fa-check"></i> Check Section 3 Answers
+                </button>
+            </div>
+        </section>
+
+        <section id="sec4" class="app-section space-y-4 hidden">
+            <div class="bg-amber-50 dark:bg-amber-950/40 border-l-4 border-amber-500 p-4 rounded-r-2xl text-amber-900 dark:text-amber-200 text-xs sm:text-sm">
+                <strong class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-feather"></i> "About You" Interactive Writing Journal</strong>
+                Write real sentences about your future plans! Our instant pattern checker will test if you used Simple Present in your Time/If clause.
+            </div>
+
+            <div class="space-y-4" id="sec4-container">
+                <!-- Rendered dynamically -->
+            </div>
+        </section>
+
+        <section id="sec5" class="app-section space-y-4 hidden">
+            <div class="bg-teal-50 dark:bg-teal-950/40 border-l-4 border-teal-500 p-4 rounded-r-2xl text-teal-900 dark:text-teal-200 text-xs sm:text-sm">
+                <strong class="font-bold flex items-center gap-1.5"><i class="fa-solid fa-users"></i> "Fun with Grammar" Partner Speaking Activity</strong>
+                Pick a scenario, set a 5-minute timer, and talk with a classmate! Check off structures as you speak them out loud.
+            </div>
+
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-6">
+                <!-- Random Prompt Generator -->
+                <div class="p-5 bg-gradient-to-r from-teal-500/10 to-emerald-500/10 rounded-2xl border border-teal-200 dark:border-teal-800 text-center space-y-3">
+                    <div class="text-xs font-bold uppercase tracking-wider text-teal-700 dark:text-teal-300">Random Speaking Scenario</div>
+                    <div id="roleplay-prompt" class="text-lg sm:text-xl font-display font-bold text-slate-900 dark:text-white">
+                        "Plan your upcoming weekend trip with your partner!"
+                    </div>
+                    <button onclick="generateNewRoleplayPrompt()" class="px-4 py-2 bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs rounded-xl shadow-sm transition">
+                        <i class="fa-solid fa-shuffle mr-1"></i> New Scenario
+                    </button>
+                </div>
+
+                <!-- Live Sentence Checklist -->
+                <div class="space-y-3">
+                    <h4 class="font-display font-bold text-sm text-slate-800 dark:text-slate-200">Speaking Checklist (Check items during role-play):</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs" id="roleplay-checklist">
+                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-teal-600 focus:ring-teal-500 h-4 w-4">
+                            <span>Used a <strong>When clause</strong> (e.g., <em>When class finishes...</em>)</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-teal-600 focus:ring-teal-500 h-4 w-4">
+                            <span>Used an <strong>If clause</strong> (e.g., <em>If it rains tomorrow...</em>)</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-teal-600 focus:ring-teal-500 h-4 w-4">
+                            <span>Used <strong>be going to</strong> for prior plans</span>
+                        </label>
+                        <label class="flex items-center gap-2.5 p-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 cursor-pointer">
+                            <input type="checkbox" class="rounded text-teal-600 focus:ring-teal-500 h-4 w-4">
+                            <span>Used <strong>will / 'll</strong> for instant decisions</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Data for Section 1: Dialogue Cloze Exercises
+        const sec1Data = [
+            {
+                id: 's1_1',
+                speaker: 'A',
+                textBefore: "What",
+                options: ["are you doing", "will you do"],
+                textAfter: "later today?",
+                correct: 0,
+                exp: "Use Present Continuous ('are you doing') for fixed plans later today."
+            },
+            {
+                id: 's1_2',
+                speaker: 'B',
+                textBefore: "After class",
+                options: ["is", "will be"],
+                textAfter: "over, I'm going to drive my grandfather to the airport.",
+                correct: 0,
+                exp: "'After class...' is a time clause! We use Simple Present ('is'), NOT future ('will be')."
+            },
+            {
+                id: 's1_3',
+                speaker: 'A',
+                textBefore: "Where",
+                options: ["is he going", "will he go"],
+                textAfter: "?",
+                correct: 0,
+                exp: "Use Present Continuous ('is he going') for a scheduled trip."
+            },
+            {
+                id: 's1_4',
+                speaker: 'B',
+                textBefore: "To Hawaii. He",
+                options: ["is going to", "will"],
+                textAfter: "be 78 next month.",
+                correct: 0,
+                exp: "Use 'is going to' or simple present for scheduled birthday ages."
+            },
+            {
+                id: 's1_5',
+                speaker: 'B',
+                textBefore: "He's in perfect health. He's",
+                options: ["getting", "will get"],
+                textAfter: "married in two months.",
+                correct: 0,
+                exp: "Use Present Continuous ('getting') for a planned wedding arrangement."
+            },
+            {
+                id: 's1_6',
+                speaker: 'A',
+                textBefore: "What are you doing when he",
+                options: ["is", "will be"],
+                textAfter: "no longer able to take care of himself?",
+                correct: 0,
+                exp: "'When he...' is a time clause! Use Simple Present ('is')."
+            },
+            {
+                id: 's1_7',
+                speaker: 'B',
+                textBefore: "We think he's",
+                options: ["going to outlive", "outliving"],
+                textAfter: "us all!",
+                correct: 0,
+                exp: "Use 'going to outlive' for a strong prediction based on present health."
+            },
+            {
+                id: 's1_8',
+                speaker: 'A',
+                textBefore: "He'll probably need help when he",
+                options: ["gets", "will get"],
+                textAfter: "older.",
+                correct: 0,
+                exp: "'When he...' is a time clause! Simple present ('gets') is required."
+            },
+            {
+                id: 's1_9',
+                speaker: 'B',
+                textBefore: "If he",
+                options: ["needs", "will need"],
+                textAfter: "help, he has his wife to care for him.",
+                correct: 0,
+                exp: "'If he...' is an IF clause! Use Simple Present ('needs')."
+            },
+            {
+                id: 's1_10',
+                speaker: 'A',
+                textBefore: "When my grandparents",
+                options: ["are", "will be"],
+                textAfter: "older, they are going to live with my parents.",
+                correct: 0,
+                exp: "'When my grandparents...' is a time clause! Use Simple Present ('are')."
+            },
+            {
+                id: 's1_11',
+                speaker: 'B',
+                textBefore: "And when I",
+                options: ["am", "will be"],
+                textAfter: "old, I'm going to take care of myself.",
+                correct: 0,
+                exp: "'When I...' is a time clause! Simple present ('am') is required."
+            },
+            {
+                id: 's1_12',
+                speaker: 'A',
+                textBefore: "You'll change your mind when you",
+                options: ["are", "will be"],
+                textAfter: "old!",
+                correct: 0,
+                exp: "'When you...' is a time clause! Simple present ('are')."
+            }
+        ];
+
+        // Data for Section 2: Sentence Lab (Clause ordering & Comma Toggle)
+        const sec2Data = [
+            {
+                id: 's2_1',
+                clauseA: "When I graduate from university",
+                clauseB: "I am going to travel around Asia",
+                firstIsTimeClause: true,
+                exp: "The 'When' clause comes FIRST, so a COMMA is required!"
+            },
+            {
+                id: 's2_2',
+                clauseA: "My parents will buy a house",
+                clauseB: "if they save enough money",
+                firstIsTimeClause: false,
+                exp: "The main clause comes FIRST, so NO comma is needed."
+            },
+            {
+                id: 's2_3',
+                clauseA: "As soon as class finishes",
+                clauseB: "I'll call you back",
+                firstIsTimeClause: true,
+                exp: "'As soon as...' clause comes FIRST, so turn comma ON."
+            },
+            {
+                id: 's2_4',
+                clauseA: "He is going to start a business",
+                clauseB: "when he moves to London",
+                firstIsTimeClause: false,
+                exp: "Main clause is FIRST, so NO comma is used!"
+            }
+        ];
+
+        // Data for Section 3: Double-Verb Conjugation
+        const sec3Data = [
+            {
+                id: 's3_1',
+                prompt: "If my brother _________ (pass) his driving test, he _________ (buy) a used car.",
+                ans1: "passes",
+                ans2: ["will buy", "is going to buy", "'ll buy"],
+                hint: "Clause 1: Simple Present (passes) | Clause 2: Future (will buy / is going to buy)"
+            },
+            {
+                id: 's3_2',
+                prompt: "When my father _________ (retire) next month, he _________ (start) painting.",
+                ans1: "retires",
+                ans2: ["is going to start", "will start", "'ll start"],
+                hint: "Clause 1: Simple Present (retires) | Clause 2: Future (is going to start / will start)"
+            },
+            {
+                id: 's3_3',
+                prompt: "We _________ (visit) the museum as soon as it _________ (open).",
+                ans1: ["will visit", "are going to visit", "'ll visit"],
+                ans2: "opens",
+                hint: "Main Clause FIRST: Future (will visit) | Time Clause: Simple Present (opens)"
+            },
+            {
+                id: 's3_4',
+                prompt: "I _________ (let) you know later if my plans _________ (change).",
+                ans1: ["will let", "'ll let", "am going to let"],
+                ans2: "change",
+                hint: "Main Clause FIRST: Future (will let) | IF Clause: Simple Present (change)"
+            }
+        ];
+
+        // Data for Section 4: "About You" Journal Prompts
+        const sec4Data = [
+            {
+                id: 's4_1',
+                starter: "When I graduate / finish school,",
+                example: "When I graduate, I am going to move to a big city.",
+                timeWord: "when"
+            },
+            {
+                id: 's4_2',
+                starter: "If I have free time this weekend,",
+                example: "If I have free time this weekend, I will visit my friends.",
+                timeWord: "if"
+            },
+            {
+                id: 's4_3',
+                starter: "As soon as I get home today,",
+                example: "As soon as I get home today, I am going to rest.",
+                timeWord: "as soon as"
+            }
+        ];
+
+        const roleplayPrompts = [
+            "Plan your upcoming weekend trip with your partner!",
+            "Discuss what you will do when you graduate or retire!",
+            "Talk about family news and plans for the next holiday!",
+            "Discuss what you will do if it rains all weekend!"
+        ];
+
+        let state = {
+            scores: { sec1: 0, sec2: 0, sec3: 0 }
+        };
+
+        // Initialize App
+        window.onload = function() {
+            renderSection1();
+            renderSection2();
+            renderSection3();
+            renderSection4();
+            updateHeaderProgress();
+        };
+
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            const isDark = document.documentElement.classList.contains('dark');
+            document.getElementById('theme-toggle-dark-icon').classList.toggle('hidden', !isDark);
+            document.getElementById('theme-toggle-light-icon').classList.toggle('hidden', isDark);
+        }
+
+        function toggleCheatSheet() {
+            const body = document.getElementById('cheat-sheet-body');
+            const btn = document.getElementById('cheat-toggle-btn');
+            body.classList.toggle('hidden');
+            btn.querySelector('span').innerText = body.classList.contains('hidden') ? 'Show Reference' : 'Hide Reference';
+        }
+
+        function switchSection(secId) {
+            document.querySelectorAll('.app-section').forEach(s => s.classList.add('hidden'));
+            document.getElementById(secId).classList.remove('hidden');
+
+            document.querySelectorAll('.section-tab').forEach(btn => {
+                btn.className = "section-tab px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 flex items-center gap-2";
+            });
+
+            const activeBtn = document.getElementById(`nav-${secId}`);
+            activeBtn.className = "section-tab active px-4 py-2.5 rounded-2xl font-bold text-xs sm:text-sm whitespace-nowrap transition bg-emerald-600 text-white shadow-md shadow-emerald-600/20 flex items-center gap-2";
+        }
+
+        // --- RENDER SECTION 1 ---
+        function renderSection1() {
+            const container = document.getElementById('sec1-cards-container');
+            container.innerHTML = '';
+
+            sec1Data.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = "p-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3";
+
+                let html = `
+                    <div class="flex items-center justify-between text-xs font-bold text-slate-400 border-b border-slate-100 dark:border-slate-700/50 pb-2">
+                        <span>Question ${idx + 1}</span>
+                        <span class="bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 px-2 py-0.5 rounded">Speaker ${q.speaker}</span>
+                    </div>
+                    <div class="text-sm sm:text-base leading-relaxed text-slate-800 dark:text-slate-100 font-medium">
+                        ${q.textBefore} 
+                        <select id="s1-sel-${q.id}" class="mx-1 px-2.5 py-1 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl font-bold text-emerald-600 dark:text-emerald-400 text-xs sm:text-sm focus:ring-2 focus:ring-emerald-500">
+                            <option value="">-- choose --</option>
+                            <option value="0">${q.options[0]}</option>
+                            <option value="1">${q.options[1]}</option>
+                        </select>
+                        ${q.textAfter}
+                    </div>
+                    <div id="s1-fb-${q.id}" class="hidden p-3 rounded-xl text-xs sm:text-sm"></div>
+                `;
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function checkSection1() {
+            let correct = 0;
+            sec1Data.forEach(q => {
+                const sel = document.getElementById(`s1-sel-${q.id}`).value;
+                const fb = document.getElementById(`s1-fb-${q.id}`);
+                fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-red-50', 'text-red-800', 'dark:bg-emerald-950/40', 'dark:bg-red-950/40');
+
+                if (sel !== "" && parseInt(sel) === q.correct) {
+                    correct++;
+                    fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/40', 'dark:text-emerald-300');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> <strong>Correct!</strong> ${q.exp}`;
+                } else {
+                    fb.classList.add('bg-red-50', 'text-red-800', 'dark:bg-red-950/40', 'dark:text-red-300');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-1"></i> <strong>Incorrect.</strong> ${q.exp}`;
+                }
+            });
+            state.scores.sec1 = correct;
+            updateHeaderProgress();
+        }
+
+        function resetSection1() {
+            sec1Data.forEach(q => {
+                document.getElementById(`s1-sel-${q.id}`).value = "";
+                document.getElementById(`s1-fb-${q.id}`).classList.add('hidden');
+            });
+            state.scores.sec1 = 0;
+            updateHeaderProgress();
+        }
+
+        // --- RENDER SECTION 2 ---
+        function renderSection2() {
+            const container = document.getElementById('sec2-container');
+            container.innerHTML = '';
+
+            sec2Data.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-4";
+
+                let html = `
+                    <div class="text-xs font-bold text-skybrand-600 dark:text-skybrand-400 uppercase tracking-wider">Sentence Lab ${idx + 1}</div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs font-semibold">
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">Clause A: "${q.clauseA}"</div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-700">Clause B: "${q.clauseB}"</div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center justify-between gap-3 p-3 bg-slate-100 dark:bg-slate-900/60 rounded-xl">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Clause Order:</span>
+                            <select id="s2-order-${q.id}" class="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-xs font-bold text-slate-800 dark:text-white">
+                                <option value="AB">Clause A first, then Clause B</option>
+                                <option value="BA">Clause B first, then Clause A</option>
+                            </select>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-slate-600 dark:text-slate-300">Needs Comma?</span>
+                            <select id="s2-comma-${q.id}" class="px-2.5 py-1 bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg text-xs font-bold text-slate-800 dark:text-white">
+                                <option value="no">NO Comma (,)</option>
+                                <option value="yes">YES Comma (,)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="s2-fb-${q.id}" class="hidden p-3 rounded-xl text-xs sm:text-sm"></div>
+                `;
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function checkSection2() {
+            let correct = 0;
+            sec2Data.forEach(q => {
+                const order = document.getElementById(`s2-order-${q.id}`).value;
+                const comma = document.getElementById(`s2-comma-${q.id}`).value;
+                const fb = document.getElementById(`s2-fb-${q.id}`);
+                fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-red-50', 'text-red-800', 'dark:bg-emerald-950/40', 'dark:bg-red-950/40');
+
+                // Determine if comma needed based on chosen order
+                const firstClauseIsTime = (order === 'AB' && q.firstIsTimeClause) || (order === 'BA' && !q.firstIsTimeClause);
+                const expectedComma = firstClauseIsTime ? 'yes' : 'no';
+
+                if (comma === expectedComma) {
+                    correct++;
+                    fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/40', 'dark:text-emerald-300');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> <strong>Correct!</strong> ${q.exp}`;
+                } else {
+                    fb.classList.add('bg-red-50', 'text-red-800', 'dark:bg-red-950/40', 'dark:text-red-300');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-1"></i> <strong>Incorrect.</strong> ${q.exp}`;
+                }
+            });
+            state.scores.sec2 = correct;
+            updateHeaderProgress();
+        }
+
+        function resetSection2() {
+            sec2Data.forEach(q => {
+                document.getElementById(`s2-order-${q.id}`).value = "AB";
+                document.getElementById(`s2-comma-${q.id}`).value = "no";
+                document.getElementById(`s2-fb-${q.id}`).classList.add('hidden');
+            });
+            state.scores.sec2 = 0;
+            updateHeaderProgress();
+        }
+
+        // --- RENDER SECTION 3 ---
+        function renderSection3() {
+            const container = document.getElementById('sec3-container');
+            container.innerHTML = '';
+
+            sec3Data.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3";
+
+                let html = `
+                    <div class="text-xs font-bold text-purple-600 dark:text-purple-400 uppercase tracking-wider">Exercise ${idx + 1}</div>
+                    <div class="text-sm font-semibold text-slate-800 dark:text-slate-100">${q.prompt}</div>
+                    <div class="text-xs text-slate-400 font-medium italic">${q.hint}</div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                        <input type="text" id="s3-v1-${q.id}" placeholder="First verb form..." class="px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl text-xs sm:text-sm font-bold text-purple-600 dark:text-purple-400 focus:ring-2 focus:ring-purple-500">
+                        <input type="text" id="s3-v2-${q.id}" placeholder="Second verb form..." class="px-3 py-2 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl text-xs sm:text-sm font-bold text-purple-600 dark:text-purple-400 focus:ring-2 focus:ring-purple-500">
+                    </div>
+
+                    <div id="s3-fb-${q.id}" class="hidden p-3 rounded-xl text-xs sm:text-sm mt-2"></div>
+                `;
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function checkSection3() {
+            let correct = 0;
+            sec3Data.forEach(q => {
+                const v1 = document.getElementById(`s3-v1-${q.id}`).value.trim().toLowerCase();
+                const v2 = document.getElementById(`s3-v2-${q.id}`).value.trim().toLowerCase();
+                const fb = document.getElementById(`s3-fb-${q.id}`);
+                fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-red-50', 'text-red-800', 'dark:bg-emerald-950/40', 'dark:bg-red-950/40');
+
+                const checkMatch = (val, ans) => Array.isArray(ans) ? ans.includes(val) : val === ans;
+
+                if (checkMatch(v1, q.ans1) && checkMatch(v2, q.ans2)) {
+                    correct++;
+                    fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/40', 'dark:text-emerald-300');
+                    fb.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> <strong>Excellent!</strong> Perfect conjugation of both clauses.`;
+                } else {
+                    fb.classList.add('bg-red-50', 'text-red-800', 'dark:bg-red-950/40', 'dark:text-red-300');
+                    const exp1 = Array.isArray(q.ans1) ? q.ans1[0] : q.ans1;
+                    const exp2 = Array.isArray(q.ans2) ? q.ans2[0] : q.ans2;
+                    fb.innerHTML = `<i class="fa-solid fa-circle-xmark text-red-600 mr-1"></i> Correct answers: <strong>${exp1}</strong> | <strong>${exp2}</strong>.`;
+                }
+            });
+            state.scores.sec3 = correct;
+            updateHeaderProgress();
+        }
+
+        function resetSection3() {
+            sec3Data.forEach(q => {
+                document.getElementById(`s3-v1-${q.id}`).value = "";
+                document.getElementById(`s3-v2-${q.id}`).value = "";
+                document.getElementById(`s3-fb-${q.id}`).classList.add('hidden');
+            });
+            state.scores.sec3 = 0;
+            updateHeaderProgress();
+        }
+
+        // --- RENDER SECTION 4 ---
+        function renderSection4() {
+            const container = document.getElementById('sec4-container');
+            container.innerHTML = '';
+
+            sec4Data.forEach((q, idx) => {
+                const card = document.createElement('div');
+                card.className = "bg-white dark:bg-slate-800 p-5 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm space-y-3";
+
+                let html = `
+                    <div class="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider">Prompt ${idx + 1}</div>
+                    <div class="text-sm font-semibold text-slate-800 dark:text-slate-100">Starter: "${q.starter}"</div>
+                    <div class="text-xs text-slate-400 italic">Example: ${q.example}</div>
+
+                    <textarea id="s4-input-${q.id}" rows="2" placeholder="Complete your sentence here..." class="w-full p-3 bg-slate-50 dark:bg-slate-900 border border-slate-300 dark:border-slate-600 rounded-xl text-xs sm:text-sm font-medium focus:ring-2 focus:ring-amber-500 dark:text-white"></textarea>
+
+                    <div class="flex justify-end">
+                        <button onclick="checkJournalPrompt('${q.id}', '${q.timeWord}')" class="px-4 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs rounded-xl shadow-sm transition">
+                            Check Grammar Pattern
+                        </button>
+                    </div>
+
+                    <div id="s4-fb-${q.id}" class="hidden p-3 rounded-xl text-xs sm:text-sm"></div>
+                `;
+                card.innerHTML = html;
+                container.appendChild(card);
+            });
+        }
+
+        function checkJournalPrompt(id, timeWord) {
+            const val = document.getElementById(`s4-input-${id}`).value.trim().toLowerCase();
+            const fb = document.getElementById(`s4-fb-${id}`);
+            fb.classList.remove('hidden', 'bg-emerald-50', 'text-emerald-800', 'bg-amber-50', 'text-amber-800', 'dark:bg-emerald-950/40', 'dark:bg-amber-950/40');
+
+            if (val.length < 8) {
+                fb.classList.add('bg-amber-50', 'text-amber-800', 'dark:bg-amber-950/40', 'dark:text-amber-300');
+                fb.innerHTML = `Please write a complete sentence using the starter above.`;
+                return;
+            }
+
+            // Simple Present + Future Pattern Check
+            const hasWillOrGoingTo = val.includes("will") || val.includes("'ll") || val.includes("going to");
+            const hasWillInTimeClause = val.includes(`${timeWord} I will`) || val.includes(`${timeWord} i'll`) || val.includes(`${timeWord} my parents will`);
+
+            if (hasWillInTimeClause) {
+                fb.classList.add('bg-amber-50', 'text-amber-800', 'dark:bg-amber-950/40', 'dark:text-amber-300');
+                fb.innerHTML = `<i class="fa-solid fa-triangle-exclamation mr-1"></i> <strong>Grammar Tip:</strong> Don't use <strong>will</strong> inside the <em>${timeWord}</em> clause! Use Simple Present (e.g., <em>When I graduate...</em>).`;
+            } else if (hasWillOrGoingTo) {
+                fb.classList.add('bg-emerald-50', 'text-emerald-800', 'dark:bg-emerald-950/40', 'dark:text-emerald-300');
+                fb.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> <strong>Great job!</strong> You used Simple Present in your clause and a future tense in your result!`;
+            } else {
+                fb.classList.add('bg-amber-50', 'text-amber-800', 'dark:bg-amber-950/40', 'dark:text-amber-300');
+                fb.innerHTML = `<i class="fa-solid fa-circle-info mr-1"></i> Make sure to include a future form (<em>will</em> or <em>am/is/are going to</em>) in your main result clause!`;
+            }
+        }
+
+        function generateNewRoleplayPrompt() {
+            const rand = roleplayPrompts[Math.floor(Math.random() * roleplayPrompts.length)];
+            document.getElementById('roleplay-prompt').innerText = `"${rand}"`;
+        }
+
+        function updateHeaderProgress() {
+            const totalSec1 = sec1Data.length;
+            const totalSec2 = sec2Data.length;
+            const totalSec3 = sec3Data.length;
+            const totalQ = totalSec1 + totalSec2 + totalSec3;
+
+            const score = state.scores.sec1 + state.scores.sec2 + state.scores.sec3;
+            document.getElementById('header-score').innerText = score;
+            document.getElementById('header-progress-text').innerText = `${score}/${totalQ}`;
+
+            const pct = Math.round((score / totalQ) * 100);
+            document.getElementById('header-progress-bar').style.width = `${pct}%`;
+        }
+    </script>
+</body>
+</html>
